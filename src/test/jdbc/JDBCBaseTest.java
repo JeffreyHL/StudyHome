@@ -1,9 +1,7 @@
 package test.jdbc;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -50,8 +48,8 @@ public class JDBCBaseTest {
 			 *  	3、执行数据库存储过程。通常通过CallableStatement实例实现。
 			 */
 			Statement statement = conn.createStatement();
-			PreparedStatement preStatement = conn.prepareStatement("select * from user");
-			CallableStatement callStatement = conn.prepareCall("sqlString");
+			//PreparedStatement preStatement = conn.prepareStatement("select * from user");
+			//CallableStatement callStatement = conn.prepareCall("sqlString");
 			
 			/* 5，执行SQL
 			 * Statement接口提供了三种执行SQL语句的方法：executeQuery 、executeUpdate和execute 

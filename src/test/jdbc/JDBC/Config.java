@@ -15,6 +15,7 @@ public class Config {
 	}
 	public static final String DRIVER_CLASS = prop.getProperty("DRIVER_CLASS");
 	public static final String DATABASE_URL = prop.getProperty("DATABASE_URL");
+	public static final String DATABASE_NAME = prop.getProperty("DATABASE_NAME");
 	public static final String USER_NAME = prop.getProperty("USER_NAME");
 	public static final String PASSWORD = prop.getProperty("PASSWORD");
 }

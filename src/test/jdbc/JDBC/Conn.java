@@ -1,14 +1,10 @@
 package test.jdbc.JDBC;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class JDBCConn {
+public class Conn {
 
 	// 数据库连接对象
 	private Connection conn;
@@ -29,29 +25,21 @@ public class JDBCConn {
 	 * 获取数据连接对象
 	 */
 	private Connection getConntion(){
-		try {
-			Class.forName(Config.DRIVER_CLASS);
-			conn = DriverManager.getConnection(Config.DATABASE_URL);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+			try {
+				Class.forName(Config.DRIVER_CLASS).newInstance();
+				conn = DriverManager.getConnection(Config.DATABASE_URL+Config.DATABASE_NAME, 
+						Config.USER_NAME, Config.PASSWORD);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		return conn;
 	}
-	
-	// 执行SQL的声明对象
-	private Statement statement;
-	private PreparedStatement preparedStatement;
-	private CallableStatement callableStatement;
-	
-	// 结果集对象
-	private ResultSet resultSet;
-	public ResultSet getResultSet() {
-		return resultSet;
-	}
-	
-
 
 	/**
 	 * 设置是否自动提交，开启自动提交时，不可回滚事务
@@ -88,27 +76,10 @@ public class JDBCConn {
 	}
 	
 	/**
-	 * 关闭连接
+	 * 关闭conn连接
 	 */
 	public void close(){
 		try {
-			// 关闭结果集
-			if (resultSet != null) {
-				resultSet.close();
-			}
-			
-			// 关闭声明
-			if (statement != null) {
-				statement.close();
-			}
-			if (preparedStatement != null) {
-				preparedStatement.close();
-			}
-			if (callableStatement != null) {
-				callableStatement.close();
-			}
-			
-			// 关闭conn连接
 			if (conn != null) {
 				conn.close();
 			}
