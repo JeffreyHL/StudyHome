@@ -1,0 +1,7 @@
+#获取中文拼音首字母功能实现
+
+>资料来自互联网
+
+***	
+Email: [jeffreyhl@163.com](jeffreyhl@163.com)<br>
+Copyright &copy; JeffreyHL. All Rights Reserved.

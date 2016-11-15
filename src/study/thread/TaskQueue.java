@@ -1,4 +1,4 @@
-package test.thread;
+package study.thread;
 
 import java.util.LinkedList;
 

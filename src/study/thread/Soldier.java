@@ -1,4 +1,4 @@
-package test.thread;
+package study.thread;
 
 public class Soldier implements Runnable {
 

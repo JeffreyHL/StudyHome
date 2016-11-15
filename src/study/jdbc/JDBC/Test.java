@@ -1,4 +1,4 @@
-package test.jdbc.JDBC;
+package study.jdbc.JDBC;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
