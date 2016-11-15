@@ -56,6 +56,7 @@
 	CallableStatement cstmt = con.prepareCall("{CALL demoSp(? , ?)}") ;
 	
 异同点：
+
 1.	都是接口
 2.	Statement继承自Wrapper、PreparedStatement继承自Statement、CallableStatement继承自PreparedStatement
 3.	Statement接口提供了执行语句和获取结果的基本方法；<br> 
@@ -66,6 +67,7 @@
 	 CallableStatement：继承自PreparedStatement,支持带参数的SQL操作；支持调用存储过程,提供了对输出和输入/输出参数(INOUT)的支持; 
 
 说明：
+
 *	Statement每次执行sql语句，数据库都要执行sql语句的编译，最好用于仅执行一次查询并返回结果的情形，效率高于PreparedStatement。 
 *	PreparedStatement是预编译的，使用PreparedStatement有几个好处 <br>
 		1.	在执行可变参数的一条SQL时，PreparedStatement比Statement的效率高，因为DBMS预编译一条SQL当然会比多次编译一条SQL的效率要高。 <br>
