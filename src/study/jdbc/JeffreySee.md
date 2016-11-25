@@ -78,6 +78,7 @@
 #5、执行SQL语句    
 
 Statement接口提供了三种执行SQL语句的方法：executeQuery 、executeUpdate和execute    
+
 1.	executeQuery：执行查询数据库的SQL语句，返回一个结果集（ResultSet）对象。    
 2.	executeUpdate：执行给定SQL语句，用于执行INSERT、UPDATE或DELETE语句以及SQL DDL语句，如：CREATE TABLE和DROP TABLE等    
 3.	execute：可执行任何SQL语句，返回一个boolean值，表明执行该SQL语句是否返回了ResultSet。 
@@ -93,6 +94,7 @@ Statement接口提供了三种执行SQL语句的方法：executeQuery 、execute
 #6、处理结果    
 
 两种情况：    
+
 1.	执行更新返回的是本次操作影响到的记录数。    
 2.	执行查询返回的结果是一个ResultSet对象。    
 	ResultSet包含符合SQL语句中条件的所有行，并且它通过一套get方法提供了对这些行中数据的访问。    
@@ -108,6 +110,7 @@ Statement接口提供了三种执行SQL语句的方法：executeQuery 、execute
 #7、关闭JDBC对象     
 
 操作完成以后要把所有使用的JDBC对象全都关闭，以释放JDBC资源，关闭顺序和声明顺序相反：    
+
 1.	关闭记录集    
 2.	关闭声明    
 3.	关闭连接对象    
@@ -134,6 +137,3 @@ Statement接口提供了三种执行SQL语句的方法：executeQuery 、execute
 		}    
 	}  
 	
-***	
-Email: [jeffreyhl@163.com](jeffreyhl@163.com)<br>
-Copyright &copy; JeffreyHL. All Rights Reserved.
