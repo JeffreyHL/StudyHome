@@ -1,7 +1,5 @@
 package study.pinyin;
 
-import demo.Pinyin4jAppletDemo;
-
 public class PinYin {
 	  
     // 简体中文的编码范围从B0A1（45217）一直到F7FE（63486）  
